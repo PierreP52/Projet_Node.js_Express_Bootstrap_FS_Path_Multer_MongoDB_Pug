@@ -1,0 +1,9 @@
+extends ../layout.pug
+
+block content 
+  container
+      .row.justify-content-center
+        .col-md-8
+          video(width="640", height="360", controls)
+            source(src=`/public/videos/${video._id}`, type="video/mp4")
+            p Votre navigateur ne supporte pas ce type de vidéo.

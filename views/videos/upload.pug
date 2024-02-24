@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+
+block content
+  .container
+    .row.justify-content-center
+      .col-md-6
+        h1.mb-4.text-center Upload de Vidéo
+        form(action="/videos/upload", method="post", enctype="multipart/form-data")
+          .form-group
+            label(for="title") Titre de la vidéo
+            input.form-control(type="text", id="title", name="title", placeholder="Titre de la vidéo", required)
+          .form-group
+            label(for="description") Description de la vidéo
+            input.form-control(type="text", id="description", name="description", placeholder="Description de la vidéo", required)
+          .form-group
+            label(for="category") Catégorie de la vidéo
+            input.form-control(type="text", id="category", name="category", placeholder="Catégorie de la vidéo", required)
+          .form-group
+            label(for="video") Sélectionnez une vidéo (.mp4 uniquement)
+            input.form-control-file(type="file", id="video", name="video", accept=".mp4", required)
+          button.btn.btn-primary.btn-block(type="submit") Téléverser la vidéo
+

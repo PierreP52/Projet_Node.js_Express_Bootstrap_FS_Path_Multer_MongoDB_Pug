@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block content
+  .container
+    h1 Liste de Vidéos
+    if videos.length > 0
+      ul.list-group
+        each video in videos
+          li.list-group-item
+            h3 #{video.title}
+            p Description : #{video.description}
+            p Catégorie : #{video.category}
+            a(href=`/videos/stream/${video._id}`) Voir en streaming
+    else
+      p Aucune vidéo n'est disponible pour le moment.
